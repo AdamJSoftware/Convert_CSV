@@ -8,6 +8,8 @@ import tkinter
 import Engine
 import csv
 
+current_directory = os.getcwd()
+
 class CreateConfig(QDialog):
     def __init__(self, parent=None):
         super(CreateConfig, self).__init__(parent)

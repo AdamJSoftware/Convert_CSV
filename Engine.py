@@ -9,11 +9,11 @@ def main(input, output_path, configuration):
         columnsToRemove, f = f.split("\n|||NEW&TABLE2|||")
         f = "|||NEW&TABLE2|||" + f
         df = columns_to_remove(columnsToRemove, df)
-        df = df.reset_index()
+        df = df.reset_index(drop=True)
         columnsToRename, f = f.split("\n|||NEW&TABLE3|||")
         f = "|||NEW&TABLE3|||" + f
         df = columns_to_rename(columnsToRename, df)
-        df = df.reset_index()
+        df = df.reset_index(drop=True)
         columnsToAdd, f = f.split("\n|||NEW&TABLE4|||")
         f = "|||NEW&TABLE4|||" + f
         df = columns_to_add(columnsToAdd, df)
@@ -43,12 +43,12 @@ def main(input, output_path, configuration):
         except:
             pass
         try:
-            df = df.reset_index()
+            df = df.reset_index(drop=True)
         except:
             pass
         df = rows_to_switch(rowsToSwitch, df)
         try:
-            df = df.reset_index()
+            df = df.reset_index(drop=True)
         except:
             pass
         print(df)
@@ -180,7 +180,7 @@ def crop():
 
 def output(df, output_path):
     try:
-        df = df.drop(['index'], axis=1)
+        # df = df.drop(['index'], axis=1)
         df = df.drop(['level_0'], axis=1)
     except:
         pass
