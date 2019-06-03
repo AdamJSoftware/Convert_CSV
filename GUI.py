@@ -3,10 +3,7 @@ from PyQt5 import QtCore
 from PyQt5 import QtWidgets
 import sys
 import os
-from tkinter import filedialog
-import tkinter
 import Engine
-import csv
 
 current_directory = os.getcwd()
 
